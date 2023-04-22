@@ -12,6 +12,34 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <nav class="nav-sticky">
+    <div class="logo">
+      <span>InvestEstate</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#HomeLink" class="a">Home</a></li>
+      <li><a href="#AboutUsLink" class="a">About Us</a></li>
+      <li><a href="#BenefitsLink" class="a">Benefits</a></li>
+      <li><a href="#ServicesLink" class="a">Services</a></li>
+      <li><a href="#ContactLink" class="contact">CONTACT US</a></li>
+    </ul>
+    <div class="vertical-menu-container">
+    <div class="burger">
+      <div class="burger-line-top"></div>
+      <div class="burger-line-bottom"></div>
+    </div>
+    <div class="vertical-menu">
+      <ul class="nav-vertical-links">
+        <li><a href="#HomeLink" class="a">Home</a></li>
+        <li><a href="#AboutUsLink" class="a">About Us</a></li>
+        <li><a href="#ServicesLink" class="a">Services</a></li>
+        <li><a href="#BenefitsLink" class="a">Benefits</a></li>
+        <li><a href="#ListingLink" class="a">Listing</a></li>
+        <li><a href="#ContactLink" class="a">Contact</a></li>
+        </ul>
+    </div>
+  </div>
+  </nav>
   <div class="body">
   <section class="first-section" id="HomeLink">
     <nav>
@@ -83,35 +111,6 @@
     </div>
   </section>
 
-  <nav class="nav-sticky">
-    <div class="logo">
-      <span>InvestEstate</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#HomeLink" class="a">Home</a></li>
-      <li><a href="#AboutUsLink" class="a">About Us</a></li>
-      <li><a href="#BenefitsLink" class="a">Benefits</a></li>
-      <li><a href="#ServicesLink" class="a">Services</a></li>
-      <li><a href="#ContactLink" class="contact">CONTACT US</a></li>
-    </ul>
-    <div class="vertical-menu-container">
-    <div class="burger">
-      <div class="burger-line-top"></div>
-      <div class="burger-line-bottom"></div>
-    </div>
-    <div class="vertical-menu">
-      <ul class="nav-vertical-links">
-        <li><a href="#HomeLink" class="a">Home</a></li>
-        <li><a href="#AboutUsLink" class="a">About Us</a></li>
-        <li><a href="#ServicesLink" class="a">Services</a></li>
-        <li><a href="#BenefitsLink" class="a">Benefits</a></li>
-        <li><a href="#ListingLink" class="a">Listing</a></li>
-        <li><a href="#ContactLink" class="a">Contact</a></li>
-        </ul>
-    </div>
-  </div>
-  </nav>
-
   <section class="second-section" id="AboutUsLink">
     <div class="second-container">
       <div class="AboutUs">ABOUT US</div>
@@ -137,15 +136,17 @@
           goals.
         </div>  
       </div>
-      <div class="switchDayNight">
-        <div class="day"></div>
-        <div class="night"></div>
-        <div class="divForSlider">
-          <input type="range" min="0" max="100" id="slider" name="slider" oninput="slider()">
-        </div>
+
+      <div class="comparison">
+        <figure>
+          <div id="divizor"></div>
+        </figure>
+        <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()">
       </div>
-      <div class="Provide">What we provide</div>
-    </div>
+
+      <div class="Provide">
+        What we provide
+      </div>
   </section>
 
   <section class="third-section" id="ServicesLink">
