@@ -12,13 +12,8 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="body">
   <section class="first-section" id="HomeLink">
-  <div class="welcome">
-    <div class="line"></div>
-    <div class="welcome-txt">Welcome to our website!</div>
-  </div>
-    <div class="container">
-
     <nav>
       <div class="logo">
         <span>InvestEstate</span>
@@ -47,7 +42,11 @@
       </div>
     </div>
     </nav>
-
+  <div class="welcome">
+    <div class="line"></div>
+    <div class="welcome-txt">Welcome to our website!</div>
+  </div>
+    <div class="container">
     <div class="first-container">
       <div class="bigRe">RE</div>
       <img src="source/3a.jpg" alt="house" class="bg-house">
@@ -70,12 +69,48 @@
         </div>
       </div> 
       <div class="mouseScroll">
-        <img src="source/mouse.png" alt="scrolldown">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div>
+          <span class="m_scroll_arrows unu"></span>
+          <span class="m_scroll_arrows doi"></span>
+          <span class="m_scroll_arrows trei"></span>
+        </div>
       </div>
     </div>
     
     </div>
   </section>
+
+  <nav class="nav-sticky">
+    <div class="logo">
+      <span>InvestEstate</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#HomeLink" class="a">Home</a></li>
+      <li><a href="#AboutUsLink" class="a">About Us</a></li>
+      <li><a href="#BenefitsLink" class="a">Benefits</a></li>
+      <li><a href="#ServicesLink" class="a">Services</a></li>
+      <li><a href="#ContactLink" class="contact">CONTACT US</a></li>
+    </ul>
+    <div class="vertical-menu-container">
+    <div class="burger">
+      <div class="burger-line-top"></div>
+      <div class="burger-line-bottom"></div>
+    </div>
+    <div class="vertical-menu">
+      <ul class="nav-vertical-links">
+        <li><a href="#HomeLink" class="a">Home</a></li>
+        <li><a href="#AboutUsLink" class="a">About Us</a></li>
+        <li><a href="#ServicesLink" class="a">Services</a></li>
+        <li><a href="#BenefitsLink" class="a">Benefits</a></li>
+        <li><a href="#ListingLink" class="a">Listing</a></li>
+        <li><a href="#ContactLink" class="a">Contact</a></li>
+        </ul>
+    </div>
+  </div>
+  </nav>
 
   <section class="second-section" id="AboutUsLink">
     <div class="second-container">
@@ -245,7 +280,7 @@
       </div>
       <div></div>
       <div style="display: flex; justify-content: center; cursor: pointer;">
-        <img src="source/arrows2.png" class="flip-arrows">
+        <img src="/source/arrows2.png" class="flip-arrows">
       </div>
     </div>
   </section> 
@@ -295,7 +330,7 @@
   <section class="sixth-section" id="ContactLink">
     <div class="sixth-container">
       <div class="left-image">
-        <img src="source/contact-img.png" class="bottomLeftImage">
+        <img src="/source/contact-img.png" class="bottomLeftImage">
       </div>
       <div class="shadow">
         <div style="padding-right: 7.813vw; padding-left: 5.2vw;">
@@ -353,5 +388,6 @@
       </div>
     </div>
   </footer>
+  </div>
 </body> 
 </html>

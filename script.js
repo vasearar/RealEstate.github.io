@@ -1,7 +1,23 @@
 
+let startPoint = document.querySelector(".AboutUs");
+let startPointPos = startPoint.getBoundingClientRect().top;
+let navbar = document.querySelector(".nav-sticky");
+
+window.addEventListener("scroll", e => {
+  if(startPointPos < 0){
+    startPointPos = 500;
+  }
+  let scrollPos = window.scrollY; 
+  if (scrollPos > startPointPos){
+    navbar.style.display = "flex";
+  } else {
+    navbar.style.display = "none";
+  }
+});
+  
   let background = document.querySelector(".bg-house");
   let bothImg = document.querySelectorAll(".forChange");
-  let images = ["source/1a.jpg", "source/2a.jpg", "source/3a.jpg"];
+  let images = ["/source/1a.jpg", "/source/2a.jpg", "/source/3a.jpg"];
   let x = 0, y = 1, z = 2;
 
  function backgroundChange() {
@@ -40,7 +56,7 @@ function slider() {
    day.style.width = `${rangeValue}%`;
  }
 
-let carousels = ["source/carousel1.png", "source/carousel2.png", "source/carousel3.png"];
+let carousels = ["/source/carousel1.png", "/source/carousel2.png", "/source/carousel3.png"];
 let j = 0; k = 1; l = 2;
 let first = document.querySelector(".big");
 let second = document.querySelector(".small");
@@ -151,17 +167,28 @@ function changeListing(){
 let listingArrows = document.querySelector(".listing-arrows");
 listingArrows.addEventListener("click", changeListing); 
 
-let verticalMenu = document.querySelector(".vertical-menu");
-let burger = document.querySelector(".burger");
+let verticalMenu = document.querySelectorAll(".vertical-menu");
+let burger = document.querySelectorAll(".burger");
 const body = document.querySelector("body");
 
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  if (verticalMenu.style.display === 'none' || verticalMenu.style.display === '') {
-    verticalMenu.style.display = 'block';
+burger[0].addEventListener('click', () => {
+  burger[0].classList.toggle('active');
+  if (verticalMenu[0].style.display === 'none' || verticalMenu[0].style.display === '') {
+    verticalMenu[0].style.display = 'block';
     body.style.overflow = "hidden";
   } else {
-    verticalMenu.style.display = 'none';
+    verticalMenu[0].style.display = 'none';
+    body.style.overflow = "auto";
+  }
+});
+
+burger[1].addEventListener('click', () => {
+  burger[1].classList.toggle('active');
+  if (verticalMenu[1].style.display === 'none' || verticalMenu[1].style.display === '') {
+    verticalMenu[1].style.display = 'block';
+    body.style.overflow = "hidden";
+  } else {
+    verticalMenu[1].style.display = 'none';
     body.style.overflow = "auto";
   }
 });
