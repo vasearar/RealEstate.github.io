@@ -1,7 +1,7 @@
 
   let background = document.querySelector(".bg-house");
   let bothImg = document.querySelectorAll(".forChange");
-  let images = ["/source/1a.jpg", "/source/2a.jpg", "/source/3a.jpg"];
+  let images = ["source/1a.jpg", "source/2a.jpg", "source/3a.jpg"];
   let x = 0, y = 1, z = 2;
 
  function backgroundChange() {
@@ -40,7 +40,7 @@ function slider() {
    day.style.width = `${rangeValue}%`;
  }
 
-let carousels = ["/source/carousel1.png", "/source/carousel2.png", "/source/carousel3.png"];
+let carousels = ["source/carousel1.png", "source/carousel2.png", "source/carousel3.png"];
 let j = 0; k = 1; l = 2;
 let first = document.querySelector(".big");
 let second = document.querySelector(".small");
