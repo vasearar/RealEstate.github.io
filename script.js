@@ -14,38 +14,41 @@ window.addEventListener("scroll", e => {
     navbar.style.display = "none";
   }
 });
-  
-  let background = document.querySelector(".bg-house");
-  let bothImg = document.querySelectorAll(".forChange");
-  let images = ["/source/1a.jpg", "/source/2a.jpg", "/source/3a.jpg"];
-  let x = 0, y = 1, z = 2;
 
- function backgroundChange() {
-    background.style.opacity = 0;
-    bothImg[0].style.opacity = 0;
-    bothImg[1].style.opacity = 0;
-    setTimeout(function() {
-      background.src = images[x];
-      bothImg[0].src = images[y];
-      bothImg[1].src = images[z];
-      background.style.opacity = 1;
-      bothImg[0].style.opacity = 1;
-      bothImg[1].style.opacity = 1;
-    }, 1000);
-    x++;
-    y++;
-    z++;
-    if (x == 3) {
-      x = 0;
-    }
-    if (y == 3) {
-      y = 0;
-    }
-    if (z == 3) {
-      z = 0;
-    }
- }
- setInterval(backgroundChange, 6500);
+
+
+
+  
+   let background = document.querySelector(".bg-house");
+   let bothImg = document.querySelectorAll(".forChange");
+   let images = ["source/1a.jpg", "source/2a.jpg", "source/3a.jpg"];
+   let x = 0, y = 1, z = 2
+  function backgroundChange() {
+     background.style.opacity = 0;
+     bothImg[0].style.opacity = 0;
+     bothImg[1].style.opacity = 0;
+     setTimeout(function() {
+       background.src = images[x];
+       bothImg[0].src = images[y];
+       bothImg[1].src = images[z];
+       background.style.opacity = 1;
+       bothImg[0].style.opacity = 1;
+       bothImg[1].style.opacity = 1;
+     }, 1000);
+     x++;
+     y++;
+     z++;
+     if (x == 3) {
+       x = 0;
+     }
+     if (y == 3) {
+       y = 0;
+     }
+     if (z == 3) {
+       z = 0;
+     }
+  }
+  setInterval(backgroundChange, 6500);
 
 
 let range = document.getElementById("slider");
@@ -56,7 +59,7 @@ function slider() {
    day.style.width = `${rangeValue}%`;
  }
 
-let carousels = ["/source/carousel1.png", "/source/carousel2.png", "/source/carousel3.png"];
+let carousels = ["source/carousel1.png", "source/carousel2.png", "source/carousel3.png"];
 let j = 0; k = 1; l = 2;
 let first = document.querySelector(".big");
 let second = document.querySelector(".small");
