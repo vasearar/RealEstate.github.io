@@ -265,7 +265,7 @@ nav{
   width: 100%;
   height: 845px;
   position: absolute;
-  background-image: url("/source/day.png");
+  background-image: url("source/day.png");
   background-repeat: no-repeat;
 }
 
@@ -273,7 +273,7 @@ nav{
   width: 50%;
   height: 845px;
   position: absolute;
-  background-image: url("/source/night.png");
+  background-image: url("source/night.png");
   background-repeat: no-repeat;
   border-right: 5px solid #FFFFFF;
 }
@@ -357,7 +357,7 @@ nav{
   background-color: #F1F1F1;
   cursor: pointer;
   border-radius: 50%;
-  background-image: url("/source/arrows.png");
+  background-image: url("source/arrows.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -366,7 +366,7 @@ nav{
 .third-section{
   margin-top: 100px;
   position: relative;
-  background-image: url("/source/background3.jpg");
+  background-image: url("source/background3.jpg");
   background-size: cover;
   background-position: center;
 }
