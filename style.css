@@ -23,7 +23,6 @@ body{
   width: 100vw;
   overflow-x: hidden;
   margin: 0;
-  ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
 }
@@ -41,7 +40,9 @@ body::-webkit-scrollbar{
 .first-section{
   background-color: #212121;
   position: relative;
-  z-index: 101;
+  width: 100vw;
+  height: 86.6vh;
+  display: grid;
 }
 
 .container, .second-container, .third-container, .fourth-container, .fifth-container{
@@ -49,22 +50,62 @@ body::-webkit-scrollbar{
   padding: 0 7.813vw;
 }
 
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-div{
+  max-width: 56.938vw;
+  text-align: center;
+}
+
+.home-div p:nth-child(1){
+  font-size: 8.33rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #F1F1F1;
+  margin: 0;
+}
+
+.home-div p:nth-child(2){
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #F1F1F1;
+}
+
+.home-div p:nth-child(2) span{
+  background-color: #C79060;
+  border-radius: 4px;
+  padding: 0 3px;
+}
+
+.home-div p:nth-child(3){
+  display: inline-block;
+  color: #F1F1F1;
+  max-width: 800px;
+  font-size: 1rem;
+}
+
 
 nav{
+  position: inherit;
   background-color: #212121;
   top: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 7.813vw 50px;
+  padding: clamp(18px, 50px, 2.7%) 7.813vw;
   width: 100%;
 }
 
-.nav-sticky{
-  padding: 15px 7.813vw 15px;
-  position: sticky;
-  display: flex;
+.navBarSus{
+  position: fixed;
+  top: -100%;
+  padding: 18px 7.813vw;
+  transition: cubic-bezier(0.86, 0, 0.07, 1) 0.8s;
 }
 
 .logo span, .footer-left span{
@@ -88,7 +129,6 @@ nav{
 .nav-links li:last-child {
   margin-right: 0;
 }
-
 
 .a{
   position: relative;
@@ -137,8 +177,6 @@ nav{
   transform-origin: bottom left;
 }
 
-
-
 .contact{
   white-space: nowrap;
   text-decoration: none;
@@ -153,53 +191,58 @@ nav{
 }
 
 .bg-house{
+  position: absolute;
+  margin-left: 7.813vw;
+  object-fit: cover;
   border-top-left-radius: 20px;
   filter:brightness(60%);
   overflow: hidden;
-  width: 110%;
-  transition: 2s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 
+.bg-house-aux{
+  right: -100%;
+  position: absolute;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  filter:brightness(60%);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
 
+.takePosition{
+  animation: takePosition 1s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+.microChange{
+  animation: microChange 2s forwards;
+}
+
+@keyframes takePosition {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: -7.8%;
+  }
+}
+
+@keyframes microChange {
+  0% {
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
 .forChange{
   transition: opacity 2s ease-in-out;
-}
-
-
-.home-div{
-  top: 50%;
-  left: 50%;
-  position: absolute;
-}
-
-.REAL-ESTATE{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  transform: translate(-50%, -99%);
-  text-align: center;
-  color: #F1F1F1;
-}
-
-.REAL-ESTATE-HEADER{
-  font-style: normal;
-  font-weight: 800;
-  font-size: 8.3rem;
-  white-space: nowrap;
-  letter-spacing: 0.1em;
-}
-
-.REAL-ESTATE-TEXT{
-  font-size: 1.44rem;
-}
-
-.REAL-ESTATE-TEXT span{
-  background-color: #C79060;
-  border-radius: 4px;
-  padding: 0 3px;
 }
 
 .imgNumber{
@@ -224,6 +267,7 @@ nav{
 }
 
 .microGrid{
+  margin-right: 7.813vw;
   position: absolute;
   right: 0;
   bottom: 50px;
@@ -250,7 +294,7 @@ nav{
 
 .welcome{
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 0;
   margin-left: -205px;
   display: flex;
@@ -281,47 +325,62 @@ nav{
   align-items: center;
 }
 
-.comparison{
-  width: 100%;
-  height: 40vw;
-  overflow: hidden;
-  margin-top: 75px;
-}
-
-.comparison figure{
-  background-image: url("source/day.png");
-  background-size: cover;
+.comparasion{
+  margin-top: clamp(50px, 75px, 4.7%);
   position: relative;
-  font-size: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
+  aspect-ratio: 1620/845;
+
+  width: 80%;
 }
 
-.comparison figure > img {
-  position: relative;
-  width: 100%;
-}
-
-.comparison figure div{
-  background-image: url("source/night.png");
-  background-size: cover;
+.first {
+  z-index: 5;
   position: absolute;
   width: 50%;
-  border-right: 5px solid #F1F1F1;
-  overflow: hidden;
-  bottom: 0;
   height: 100%;
+
+  background-image: url(source/day.png);
+  background-size: cover;
+
+  border-right: 4px solid #F1F1F1;
 }
 
-
-#slider {
-  top: -50%;
+.slider {
+  position: absolute;
+  left: -29px;
+  top: 50%;
+  transform: translateY(-50%);
   appearance: none;
-  width: 99.5%;
-  height: 0;
-  position: relative;
+
+  width: calc(100% + 50px);
+  z-index: 10;
+  background-color: transparent;
 }
+
+.slider:focus {
+  outline: none;
+}
+
+
+.slider::-moz-range-thumb {
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  background-color: #F1F1F1;
+  border-radius: 50%;
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+.second {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: url(source/night.png);
+  background-size: cover;
+}
+
 
 #slider::-webkit-slider-thumb{
   appearance: none;
@@ -337,12 +396,13 @@ nav{
 
 
 .Provide{
+  white-space: nowrap;
   font-size: 1.33rem;
   color: #F1F1F1;
   padding: 17px 75px;
   background-color: #C79060;
   border-radius: 8px;
-  margin-top: 50px;
+  margin-top: clamp(25px, 50px, 3.1%);
   cursor: pointer;
   z-index: 10;
 }
@@ -446,10 +506,11 @@ nav{
   color: #F1F1F1;
   font-size: 1rem;
   max-width: 410px;
-  line-height: 19px;
+  line-height: 22px;
 }
 
 .btn-text{
+  white-space: nowrap;
   text-align: center;
   margin-top: 54px;
   margin-bottom: 50px;
@@ -543,13 +604,13 @@ nav{
 .fourth-container{
   margin-top: 210px;
   display: grid;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 30% 70%;
 }
 
 .benefits-header{
   margin-bottom: 68px;
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #222222;
 }
 
@@ -585,7 +646,6 @@ nav{
 .flip-cards{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  overflow: hidden;
   column-gap: 20px;
   row-gap: 20px;
   cursor: pointer;
@@ -745,18 +805,17 @@ nav{
 
 @keyframes disappear {
   0% {
-    opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    opacity: 0.8;
-    scale: 0.96;
+    transform: translateX(-10000px);
   }
 }
 
 @keyframes appear {
   0% {
     opacity: 0;
-    scale: 0.96;
+    scale: 0.5;
   }
   100% {
     opacity: 1;
@@ -769,14 +828,16 @@ nav{
 }
 
 .disappear{
-  animation: disappear 1s forwards;
+  animation: disappear 3s forwards;
 }
 
 .listing-image1{
+  object-fit: cover;
   display: block;
 }
 
 .listing-image2{
+  object-fit: cover;
   display: none;
 }
 
@@ -822,10 +883,6 @@ nav{
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 383px;
-}
-
-.first-container{
-  position: relative;
 }
 
 .enquirySelf{
@@ -907,10 +964,12 @@ nav{
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(241, 241, 241, 0.8);
-  padding: 90px 0;
+  padding: clamp(45px, 90px, 5.56%) 0;
 }
 
 .forVideo{
+  width: 100vw;
+  height: 100%;
   background-image: url("source/benefits.png");
   background-size: cover;
   background-position: center;
@@ -971,22 +1030,17 @@ nav{
 }
 
 .footer-right {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 80px;
+  text-align: center;
 }
 
 .footer-right a {
   color: #F1F1F1;
   text-decoration: none;
-  margin-right: 80px;
-  font-size: 1.44rem;
+  font-size: 1rem;
   font-weight: 400;
-}
-
-.footer-right a:last-child{
-  margin-right: 0;
 }
 
 .copyright{
@@ -1028,9 +1082,14 @@ nav{
   height: 16px;
 }
 
+.under-shadow{
+  padding-right: 7.813vw;
+  padding-left: 5.2vw;
+  padding-bottom: 14.6vh;
+}
 
-.unu
-{
+
+.unu{
   margin-top: 1px;
 }
 
@@ -1202,11 +1261,6 @@ nav{
   transition: transform 0.5s ease;
 }
 
-
-
-
-
-
 .vertical-menu{
   display: none;
   z-index: 3;
@@ -1215,7 +1269,7 @@ nav{
   height: 926px;
   right: 0px;
   top: -43px;
-  background-color: #222222;
+  background-color: #212121;
   font-weight: 400;
   font-size: 3.3rem;
   line-height:75px;
@@ -1235,9 +1289,10 @@ nav{
     margin-bottom: 20px;
   }
 
-  .footer-right a{
-    width: 100%;
-    margin-bottom: 18px;
+  .footer-right{
+    gap: 18px;
+    grid-template-columns: 1fr;
+    text-align: left;
   }
 }
 
@@ -1248,11 +1303,12 @@ nav{
 }
 
 @media only screen and (max-width: 1680px){
-  .mouseScroll{
-    bottom: 30%;
+  .listing-second-header, .AboutUs, .contactUs, .videoGet, .benefits-header, .services-header{
+    font-size: 3.2rem;
   }
-  .divForSlider{
-    margin-top: 26%;
+  
+  .mouseScroll{
+    display: none;
   }
 }
 
@@ -1274,10 +1330,6 @@ nav{
 
   .REAL-ESTATE-HEADER{
     font-size: 7.5rem;
-  }
-
-  .switchDayNight{
-    height: 645px;
   }
 
   .day{
@@ -1304,6 +1356,10 @@ nav{
 }
 
 @media only screen and (max-width: 1024px){
+  .comparasion{
+    aspect-ratio: 845/845;
+  }
+
   .REAL-ESTATE-HEADER{
     font-size: 5.5rem;
   }
@@ -1319,8 +1375,8 @@ nav{
 
   .images{
     filter:brightness(60%);
-    width: 130px;
-    height: 70px;
+    width: 260px;
+    height: 140px;
     border-radius: 5px;
     border: 2px solid #F1F1F1;
   }
@@ -1392,6 +1448,11 @@ nav{
     width: 30%;
   }
 
+  .images{
+    width: 200px;
+    height: 100px;
+  }
+
   .carousel-animation{
     margin-left: 0;
     margin-bottom: 165px;
@@ -1432,6 +1493,24 @@ nav{
 
 /* Pentru telefoane */
 @media only screen and (max-width: 430px){
+  .second-section{
+    background: linear-gradient(to bottom, #212121 80%, #ffffff 67.25%);
+  }
+
+  .comparasion{
+    aspect-ratio: 340/408;
+    width: 100%;
+  }
+
+  .first-section{
+    height: 90vh;
+  }
+
+  .container{
+    padding-top: 60px;
+    align-items: flex-start;
+  }
+
   nav{
     flex-direction: row-reverse;
   }
@@ -1459,7 +1538,7 @@ nav{
 
   .microGrid{
     grid-template-columns: 1fr;
-    gap: 23px;
+    gap: 12px;
   }
 
   .bg-house{
@@ -1479,8 +1558,6 @@ nav{
   }
 
   .Provide{
-    white-space: nowrap;
-    margin-top: 20px;
     font-size: 1.3rem;
   }
 
@@ -1635,16 +1712,6 @@ nav{
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
-  }
-
-  .comparison{
-    width: 340px;
-    height: 408px;
-  }
-
-  #slider::-webkit-slider-thumb{
-    width: 25px;
-    height: 25px;
   }
 }
 

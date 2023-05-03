@@ -1,58 +1,57 @@
+fitty("#my-text");
 
-let startPoint = document.querySelector(".AboutUs");
-let startPointPos = startPoint.getBoundingClientRect().top;
-let navbar = document.querySelector(".nav-sticky");
+let bgImage = document.querySelector(".bg-house");
+let bgImageAux = document.querySelector(".bg-house-aux");
 
-window.addEventListener("scroll", e => {
-  if(startPointPos < 0){
-    startPointPos = 500;
-  }
-  let scrollPos = window.scrollY; 
-  if (scrollPos > startPointPos){
-    navbar.style.display = "flex";
-  } else {
-    navbar.style.display = "none";
-  }
+let clickToChange = document.querySelectorAll(".forChange");
+
+let timeId;
+
+function startTimer(){
+  timeId = setInterval(backgroundChange, 10000);
+}
+
+startTimer();
+
+function resetTimer(){
+  clearInterval(timeId);
+  startTimer();
+}
+
+clickToChange[0].addEventListener("click", () => {
+  resetTimer();
+  backgroundChange();
 });
 
- let background = document.querySelector(".bg-house");
- let bothImg = document.querySelectorAll(".forChange");
- let images = ["source/1a.jpg", "source/2a.jpg", "source/3a.jpg"];
- let x = 0, y = 1, z = 2
-function backgroundChange() {
-   background.style.opacity = 0;
-   bothImg[0].style.opacity = 0;
-   bothImg[1].style.opacity = 0;
-   setTimeout(function() {
-     background.src = images[x];
-     bothImg[0].src = images[y];
-     bothImg[1].src = images[z];
-     background.style.opacity = 1;
-     bothImg[0].style.opacity = 1;
-     bothImg[1].style.opacity = 1;
-   }, 1000);
-   x++;
-   y++;
-   z++;
-   if (x == 3) {
-     x = 0;
-   }
-   if (y == 3) {
-     y = 0;
-   }
-   if (z == 3) {
-     z = 0;
-   }
+function backgroundChange (){
+  let firstSource = clickToChange[0].getAttribute("src");
+  let secondSource = clickToChange[1].getAttribute("src");
+  let thirdSource = bgImage.getAttribute("src");
+
+  bgImageAux.src = firstSource;
+  bgImageAux.classList.add("takePosition");
+  clickToChange[0].classList.add("microChange");
+  clickToChange[1].classList.add("microChange");
+
+  setTimeout(() => {
+    bgImage.src = firstSource;
+    bgImageAux.classList.remove("takePosition");
+    clickToChange[0].src = secondSource;
+    clickToChange[1].src = thirdSource;
+  }, 1000);
+
+  setTimeout(() => {
+    clickToChange[0].classList.remove("microChange");
+    clickToChange[1].classList.remove("microChange");
+  }, 2000);
+};
+
+const slider = document.querySelector('#slider');
+const firstImage = document.querySelector('.first');
+slider.oninput = () => {
+    firstImage.style.width = slider.value + '%';
 }
-setInterval(backgroundChange, 6500);
 
-
-
-var divisor = document.getElementById("divizor"),
-slider = document.getElementById("slider");
-function moveDivisor() { 
-divisor.style.width = slider.value+"%";
-}
 
 let carousels = ["source/carousel1.png", "source/carousel2.png", "source/carousel3.png"];
 let j = 0; k = 1; l = 2;
@@ -167,6 +166,8 @@ listingArrows.addEventListener("click", changeListing);
 
 let verticalMenu = document.querySelectorAll(".vertical-menu");
 let burger = document.querySelectorAll(".burger");
+let linkDinBurger = document.querySelectorAll(".navBarSus .vertical-menu ul li .a");
+let linkDinBurgerInitial = document.querySelectorAll(".navBarInitial .vertical-menu ul li .a");
 const body = document.querySelector("body");
 
 burger[0].addEventListener('click', () => {
@@ -190,7 +191,36 @@ burger[1].addEventListener('click', () => {
     body.style.overflow = "auto";
   }
 });
- 
+
+linkDinBurger.forEach(function(element){
+  element.addEventListener("click", () => {
+    verticalMenu[0].style.display = 'none';
+    body.style.overflow = "auto";
+    burger[0].classList.remove("active");
+  });
+});
+
+linkDinBurgerInitial.forEach(function(element){
+  element.addEventListener("click", () => {
+    verticalMenu[1].style.display = 'none';
+    body.style.overflow = "auto";
+    burger[1].classList.remove("active");
+  });
+});
+
+let NavBarFix = document.querySelector(".navBarSus");
+let startPoint = document.querySelector(".AboutUs");
+let startPointPos = startPoint.getBoundingClientRect().top;
+
+window.addEventListener("scroll", e => {
+  let scrollPos = window.scrollY; 
+  if (scrollPos > startPointPos){
+    NavBarFix.style.top = "0";
+  } else {
+    NavBarFix.style.top = "-100%";
+   }
+});
+
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

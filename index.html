@@ -10,39 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
+  <script src="./node_modules/fitty/dist/fitty.min.js"></script>
 </head>
 <body>
-  <nav class="nav-sticky">
-    <div class="logo">
-      <span>InvestEstate</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#HomeLink" class="a">Home</a></li>
-      <li><a href="#AboutUsLink" class="a">About Us</a></li>
-      <li><a href="#BenefitsLink" class="a">Benefits</a></li>
-      <li><a href="#ServicesLink" class="a">Services</a></li>
-      <li><a href="#ContactLink" class="contact">CONTACT US</a></li>
-    </ul>
-    <div class="vertical-menu-container">
-    <div class="burger">
-      <div class="burger-line-top"></div>
-      <div class="burger-line-bottom"></div>
-    </div>
-    <div class="vertical-menu">
-      <ul class="nav-vertical-links">
-        <li><a href="#HomeLink" class="a">Home</a></li>
-        <li><a href="#AboutUsLink" class="a">About Us</a></li>
-        <li><a href="#ServicesLink" class="a">Services</a></li>
-        <li><a href="#BenefitsLink" class="a">Benefits</a></li>
-        <li><a href="#ListingLink" class="a">Listing</a></li>
-        <li><a href="#ContactLink" class="a">Contact</a></li>
-        </ul>
-    </div>
-  </div>
-  </nav>
   <div class="body">
-  <section class="first-section" id="HomeLink">
-    <nav>
+    <nav class="navBarSus">
       <div class="logo">
         <span>InvestEstate</span>
       </div>
@@ -70,46 +42,79 @@
       </div>
     </div>
     </nav>
-  <div class="welcome">
-    <div class="line"></div>
-    <div class="welcome-txt">Welcome to our website!</div>
-  </div>
-    <div class="container">
-    <div class="first-container">
-      <div class="bigRe">RE</div>
+    <!-- NavBarul initial -->
+    <nav class="navBarInitial">
+      <div class="logo">
+        <span>InvestEstate</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#HomeLink" class="a">Home</a></li>
+        <li><a href="#AboutUsLink" class="a">About Us</a></li>
+        <li><a href="#BenefitsLink" class="a">Benefits</a></li>
+        <li><a href="#ServicesLink" class="a">Services</a></li>
+        <li><a href="#ContactLink" class="contact">CONTACT US</a></li>
+      </ul>
+      <div class="vertical-menu-container">
+      <div class="burger">
+        <div class="burger-line-top"></div>
+        <div class="burger-line-bottom"></div>
+      </div>
+      <div class="vertical-menu">
+        <ul class="nav-vertical-links">
+          <li><a href="#HomeLink" class="a">Home</a></li>
+          <li><a href="#AboutUsLink" class="a">About Us</a></li>
+          <li><a href="#ServicesLink" class="a">Services</a></li>
+          <li><a href="#BenefitsLink" class="a">Benefits</a></li>
+          <li><a href="#ListingLink" class="a">Listing</a></li>
+          <li><a href="#ContactLink" class="a">Contact</a></li>
+          </ul>
+      </div>
+    </div>
+    </nav>
+    <section class="first-section" id="HomeLink">
       <img src="source/3a.jpg" alt="house" class="bg-house">
-      <div class="home-div">
-        <div class="REAL-ESTATE">
-          <div class="REAL-ESTATE-HEADER">INVEST ESTATE</div>
-          <div class="REAL-ESTATE-TEXT"> Invest with us and enjoy <span>incredible returns</span> and  <span>investment security</span> for the rest of your life.</div>
-        </div>
+      <img src="source/2a.jpg" class="bg-house-aux">
+      <div class="welcome">
+        <div class="line"></div>
+        <div class="welcome-txt">Welcome to our website!</div>
       </div>
+      <div class="container">
+        <div class="home-div">
+          <p id="my-text">INVEST ESTATE</p>
+          <p>
+            Invest with us enjoy <span>incredible returns</span>
+          and <span>investment security</span> for the rest of your life.</span>
+          </p>
+          <p>
+            Investing in property is the most stable, low risk route to generating
+            immediate wealth, now, and for generations to come. Become a property
+            baron and secure your retirement with confidence.
+          </p>
+        </div>
 
-      <div class="microGrid">
-        <div class="micro">
-          <div class="imgNumber">01</div>
-          <div class="images"><img src="source/1a.jpg" alt="house" class="forChange"></div>
+        <div class="microGrid">
+          <div class="micro">
+            <div class="imgNumber">01</div>
+            <div class="images"><img src="source/1a.jpg" alt="house" class="forChange"></div>
+          </div>
+          <div></div>
+          <div class="micro">
+            <div class="imgNumber">02</div>
+            <div class="images"><img src="source/2a.jpg" alt="house" class="forChange"></div>
+          </div>
         </div>
-        <div></div>
-        <div class="micro">
-          <div class="imgNumber">02</div>
-          <div class="images"><img src="source/2a.jpg" alt="house" class="forChange"></div>
-        </div>
-      </div> 
-      <div class="mouseScroll">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-        <div>
-          <span class="m_scroll_arrows unu"></span>
-          <span class="m_scroll_arrows doi"></span>
-          <span class="m_scroll_arrows trei"></span>
+        <div class="mouseScroll">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <div>
+            <span class="m_scroll_arrows unu"></span>
+            <span class="m_scroll_arrows doi"></span>
+            <span class="m_scroll_arrows trei"></span>
+          </div>
         </div>
       </div>
-    </div>
-    
-    </div>
-  </section>
+    </section>
 
   <section class="second-section" id="AboutUsLink">
     <div class="second-container">
@@ -137,16 +142,16 @@
         </div>  
       </div>
 
-      <div class="comparison">
-        <figure>
-          <div id="divizor"></div>
-        </figure>
-        <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()">
-      </div>
+      <div class="comparasion">
+        <div class="first">
+        </div>        
+        
+        <div class="second">
+        </div>
+        <input type="range" min="0" max="100" value="50" class="slider" id="slider">
+    </div>
 
-      <div class="Provide">
-        What we provide
-      </div>
+    <div class="Provide">What we provide</div>
   </section>
 
   <section class="third-section" id="ServicesLink">
@@ -322,7 +327,7 @@
       </div>
       <div class="videoSelf">
         <div class="video-border"></div>
-        <iframe width="100%" height="100%" style="z-index: 10;" src="https://www.youtube.com/embed/gLvvv4yKPEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ftX7YknC89w?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div>
     </div>
@@ -334,7 +339,7 @@
         <img src="source/contact-img.png" class="bottomLeftImage">
       </div>
       <div class="shadow">
-        <div style="padding-right: 7.813vw; padding-left: 5.2vw;">
+        <div class="under-shadow">
         <div class="contact-text-header">
           <div class="contactUs">CONTACT <span>US</span></div>
           <div style="margin-top: 25px">Interested in investing in offshore property with InvestEase?
