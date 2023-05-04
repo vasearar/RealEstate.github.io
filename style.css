@@ -477,8 +477,7 @@ nav{
 }
 
 .third-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
 }
 
 .services{
@@ -519,15 +518,15 @@ nav{
 .services-text{
   color: #F1F1F1;
   font-size: 1rem;
-  max-width: 410px;
   line-height: 22px;
+  width: 27.39vw;
 }
 
 .btn-text{
   white-space: nowrap;
   text-align: center;
-  margin-top: 54px;
-  margin-bottom: 50px;
+  margin-top: 5.15vh;
+  margin-bottom: 10.3vh;
   display: inline-block;
   border-radius: 8px;
   max-width: 332px;
@@ -624,7 +623,7 @@ nav{
 }
 
 .fourth-container{
-  margin-top: 210px;
+  margin-top: 104px;
   display: grid;
   grid-template-columns: 30% 70%;
 }
@@ -1326,20 +1325,20 @@ nav{
   display: none;
   z-index: 3;
   position: absolute;
-  width: 470px;
-  height: 926px;
-  right: 0px;
-  top: -43px;
+  width: 200vw;
+  height: 120vh;
+  top: 0;
+  left: 0;
   background-color: #212121;
   font-weight: 400;
   font-size: 3.3rem;
-  line-height:75px;
+  line-height: 75px;
 }
 
 .nav-vertical-links{
   margin-top: 191px;
   list-style: none;
-  padding-left: 90px;
+  padding-left: 25%;
 }
 
 
@@ -1442,6 +1441,10 @@ nav{
     border: 2px solid #F1F1F1;
   }
 
+  .listing-image1{
+    height: 60vh;
+  }
+
   .burger {
     display: block;
     cursor: pointer;
@@ -1449,6 +1452,10 @@ nav{
 
   .nav-links{
     display: none;
+  }
+
+  .vertical-menu{
+    transform: translate(-47%, -100px);
   }
 
   .vertical-menu-container{
@@ -1479,9 +1486,11 @@ nav{
   .listing-container-up{
     grid-template-columns: 1fr;
   }
+
   .listing-realestate{
     display: none;
   }
+
   .bottomLeftImage{
     height: auto;
   }
@@ -1520,6 +1529,7 @@ nav{
   }
 
   .btn-text{
+    margin-bottom: 5.15vh;
     position: absolute;
     bottom: 0;
     left: 30%;
@@ -1581,6 +1591,7 @@ nav{
   }
 
   .vertical-menu{
+    transform: translateX(-5%);
     right: -450px;
     top: -70px;
   }
@@ -1637,11 +1648,17 @@ nav{
   .carousel-animation{
     transform: scale(0.7);
     margin-left: -210px;
+    margin-top: -100px;
+  }
+
+  .third-container{
+    height: 1392px;
   }
 
   .btn-text{
     white-space: nowrap;
-    left: 27px;
+    bottom: -10px;
+    left: 10%;
   }
 
   .fourth-container{
