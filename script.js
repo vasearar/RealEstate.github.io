@@ -1,3 +1,5 @@
+fitty("#my-text");
+
 let bgImage = document.querySelector(".bg-house");
 let bgImageAux = document.querySelector(".bg-house-aux");
 
@@ -204,9 +206,10 @@ linkDinBurgerInitial.forEach(function(element){
 
 let NavBarFix = document.querySelector(".navBarSus");
 let startPoint = document.querySelector(".AboutUs");
-let startPointPos = startPoint.getBoundingClientRect().top;
 
 window.addEventListener("scroll", e => {
+let startPointPos = startPoint.getBoundingClientRect().top;
+
   let scrollPos = window.scrollY; 
   if (scrollPos > startPointPos){
     NavBarFix.style.top = "0";
