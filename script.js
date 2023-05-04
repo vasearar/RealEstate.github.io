@@ -1,4 +1,4 @@
-fitty("#my-text");
+// fitty("#my-text");
 
 let bgImage = document.querySelector(".bg-house");
 let bgImageAux = document.querySelector(".bg-house-aux");
