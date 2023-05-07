@@ -568,6 +568,10 @@ nav{
   transition: 0.2s ease-in-out;
 }
 
+.question label{
+  margin-bottom: 10px;
+}
+
 .btn-text:hover a{
   color: #212121;
 }
